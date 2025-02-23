@@ -22,7 +22,7 @@ export const XIcon = ({ className }: IconProps) => {
             {/* X PNG иконка */}
             <div className="relative w-full h-full">
                 <Image
-                    src="/icons/x_icon.png"
+                    src="/icons/x_icon.avif"
                     alt="X"
                     fill
                     loading="eager"
@@ -50,7 +50,7 @@ export const XIconLarge = ({ className }: IconProps) => {
                 transition-all duration-700 bg-white/10 blur-2xl animate-pulse-slow" />
             <div className="relative w-full h-full">
                 <Image
-                    src="/icons/x_icon.png"
+                    src="/icons/x_icon.avif"
                     alt="X"
                     fill
                     loading="eager"
@@ -77,7 +77,7 @@ export const TelegramIcon = ({ className }: IconProps) => {
             {/* Telegram PNG иконка */}
             <div className="relative w-full h-full">
                 <Image
-                    src="/icons/telegram_icon.png"
+                    src="/icons/telegram_icon.avif"
                     alt="Telegram"
                     fill
                     loading="eager"

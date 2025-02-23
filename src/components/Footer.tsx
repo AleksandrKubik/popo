@@ -9,12 +9,55 @@ export default function Footer() {
                 <div className="flex flex-col md:hidden">
                     {/* Платежные системы и Norton Security */}
                     <div className="flex items-center justify-center gap-3 mb-4">
-                        <Image src="/icons/payment_icons/visa/Size=24.svg" alt="Visa" width={24} height={24} />
-                        <Image src="/icons/payment_icons/mastercard/Size=24.svg" alt="Mastercard" width={24} height={24} />
-                        <Image src="/icons/payment_icons/amex/Size=24.svg" alt="Amex" width={24} height={24} />
-                        <Image src="/icons/payment_icons/applepay/Size=24.svg" alt="Apple Pay" width={24} height={24} />
-                        <Image src="/icons/payment_icons/googlepay/Size=24.svg" alt="Google Pay" width={24} height={24} />
-                        <Image src="/icons/norton/Size=48.svg" alt="Norton Security" width={48} height={48} className="bg-white rounded-sm p-1" />
+                        <Image
+                            src="/icons/payment_icons/visa/Size=24.svg"
+                            alt="Visa"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/payment_icons/mastercard/Size=24.svg"
+                            alt="Mastercard"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/payment_icons/amex/Size=24.svg"
+                            alt="Amex"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/payment_icons/applepay/Size=24.svg"
+                            alt="Apple Pay"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/payment_icons/googlepay/Size=24.svg"
+                            alt="Google Pay"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/norton/Size=48.svg"
+                            alt="Norton Security"
+                            width={48}
+                            height={48}
+                            className="bg-white rounded-sm p-1"
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
                     </div>
 
                     {/* Правовая информация */}
@@ -45,11 +88,46 @@ export default function Footer() {
                 <div className="hidden md:flex justify-between items-center">
                     {/* Платежные системы */}
                     <div className="flex items-center gap-3">
-                        <Image src="/icons/payment_icons/visa/Size=24.svg" alt="Visa" width={24} height={24} />
-                        <Image src="/icons/payment_icons/mastercard/Size=24.svg" alt="Mastercard" width={24} height={24} />
-                        <Image src="/icons/payment_icons/amex/Size=24.svg" alt="Amex" width={24} height={24} />
-                        <Image src="/icons/payment_icons/applepay/Size=24.svg" alt="Apple Pay" width={24} height={24} />
-                        <Image src="/icons/payment_icons/googlepay/Size=24.svg" alt="Google Pay" width={24} height={24} />
+                        <Image
+                            src="/icons/payment_icons/visa/Size=24.svg"
+                            alt="Visa"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/payment_icons/mastercard/Size=24.svg"
+                            alt="Mastercard"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/payment_icons/amex/Size=24.svg"
+                            alt="Amex"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/payment_icons/applepay/Size=24.svg"
+                            alt="Apple Pay"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
+                        <Image
+                            src="/icons/payment_icons/googlepay/Size=24.svg"
+                            alt="Google Pay"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                            style={{ width: 'auto', height: 'auto' }}
+                        />
                     </div>
 
                     {/* Правовая информация */}
@@ -77,7 +155,14 @@ export default function Footer() {
                     </div>
 
                     {/* Norton Security */}
-                    <Image src="/icons/norton/Size=48.svg" alt="Norton Security" width={48} height={48} className="bg-white rounded-sm p-1" />
+                    <Image
+                        src="/icons/norton/Size=48.svg"
+                        alt="Norton Security"
+                        width={48}
+                        height={48}
+                        className="bg-white rounded-sm p-1"
+                        style={{ width: 'auto', height: 'auto' }}
+                    />
                 </div>
             </div>
         </footer>
