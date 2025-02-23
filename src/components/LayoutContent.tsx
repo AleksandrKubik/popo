@@ -1,8 +1,8 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import BackgroundGlow from './BackgroundGlow';
-import Header from './Header';
+import BackgroundGlow from '../components/BackgroundGlow';
+import Header from '../components/Header';
 
 export const LayoutContent = ({ children }: { children: React.ReactNode }) => {
     return (
