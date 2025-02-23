@@ -79,33 +79,11 @@ export default function BackgroundGlow() {
                 className={`absolute inset-0 transition-opacity duration-1000 ease-out
                     ${isVisible ? 'opacity-100' : 'opacity-0'}`}
                 style={{
-                    backgroundImage: 'radial-gradient(circle at var(--mouse-x,50%) var(--mouse-y,50%), rgba(29,161,242,0.1) 0%, rgba(29,161,242,0) 50%)',
+                    backgroundImage: 'radial-gradient(circle at var(--mouse-x,50%) var(--mouse-y,50%), rgba(29,161,242,0.12) 0%, rgba(29,161,242,0) 50%)',
                     '--mouse-x': '50%',
                     '--mouse-y': '50%',
                 } as React.CSSProperties}
             />
-
-            {!isMobile && (
-                <>
-                    <div className={`absolute top-1/4 left-1/4 w-[40vw] h-[40vw] animate-glow-slow
-                        transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}
-                        md:w-[40vw] md:h-[40vw] w-[80vw] h-[80vw]`}>
-                        <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.08)] blur-3xl" />
-                    </div>
-
-                    <div className={`absolute bottom-1/4 right-1/3 w-[35vw] h-[35vw] animate-glow-slow-reverse
-                        transition-opacity duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}
-                        md:w-[35vw] md:h-[35vw] w-[70vw] h-[70vw]`}>
-                        <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.08)] blur-3xl" />
-                    </div>
-
-                    <div className={`absolute top-1/3 right-1/4 w-[25vw] h-[25vw] animate-glow-slower
-                        transition-opacity duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0'}
-                        md:w-[25vw] md:h-[25vw] w-[50vw] h-[50vw]`}>
-                        <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.1)] blur-3xl" />
-                    </div>
-                </>
-            )}
         </div>
     );
 } 

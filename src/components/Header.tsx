@@ -55,6 +55,7 @@ export default function Header() {
                             alt="HyperX Logo"
                             width={150}
                             height={50}
+                            priority
                             className="object-contain"
                         />
                     </Link>

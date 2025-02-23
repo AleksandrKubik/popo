@@ -51,6 +51,17 @@ export default function PricingCardV2() {
       setError('Please select a package');
       return;
     }
+
+    // Проверка URL на соответствие сервисам
+    const isXService = /x\.com/.test(tweetUrl); // Проверка на X
+    const isTelegramService = /t\.me|telegram\.org/.test(tweetUrl); // Проверка на Telegram
+    const isYouTubeService = /youtube\.com|youtu\.be/.test(tweetUrl); // Проверка на YouTube
+
+    if (!isXService && !isTelegramService && !isYouTubeService) {
+      setError('Please enter a valid URL for X, Telegram, or YouTube');
+      return;
+    }
+
     setError('');
     setStep(2);
   };
@@ -106,7 +117,7 @@ export default function PricingCardV2() {
                     </div>
                     <input
                       type="url"
-                      placeholder="Paste a link to your tweet on X"
+                      placeholder="Paste a link to your tweet on X, Telegram, or YouTube"
                       className="w-full pl-9 xs:pl-10 pr-4 py-2.5 xs:py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:border-[#1DA1F2]/30 text-sm xs:text-base"
                       value={tweetUrl}
                       onChange={(e) => setTweetUrl(e.target.value)}
