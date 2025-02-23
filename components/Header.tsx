@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline/index.js';
 
@@ -48,13 +49,14 @@ export default function Header() {
             <nav className="h-16 backdrop-blur-md border-b border-white/10 bg-black/40">
                 <div className="container h-full mx-auto px-4 flex items-center justify-between">
                     {/* Логотип */}
-                    <Link
-                        href="/"
-                        className="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 
-            bg-clip-text text-transparent hover:from-blue-300 hover:to-blue-500 
-            transition-all duration-300"
-                    >
-                        SocialBoost
+                    <Link href="/" className="flex items-center">
+                        <Image
+                            src="/logo/hyperx_logo.svg"
+                            alt="HyperX Logo"
+                            width={150}
+                            height={50}
+                            className="object-contain"
+                        />
                     </Link>
 
                     {/* Навигация */}
