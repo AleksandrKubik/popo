@@ -6,6 +6,7 @@ export default function BackgroundGlow() {
     const glowRef = useRef<HTMLDivElement>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const currentX = useRef(50);
     const currentY = useRef(50);
     const targetX = useRef(50);
@@ -13,7 +14,14 @@ export default function BackgroundGlow() {
     const animationFrameId = useRef<number | undefined>(undefined);
 
     useEffect(() => {
-        // Уменьшаем время ожидания
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
         setTimeout(() => {
             setIsVisible(true);
         }, 50);
@@ -23,6 +31,7 @@ export default function BackgroundGlow() {
         }, 1000);
 
         return () => {
+            window.removeEventListener('resize', handleResize);
             if (animationFrameId.current) {
                 cancelAnimationFrame(animationFrameId.current);
             }
@@ -30,7 +39,7 @@ export default function BackgroundGlow() {
     }, []);
 
     useEffect(() => {
-        if (isLoading) return;
+        if (isLoading || isMobile) return;
 
         const handleMouseMove = (e: MouseEvent) => {
             const { clientX, clientY } = e;
@@ -41,7 +50,6 @@ export default function BackgroundGlow() {
         };
 
         const animate = () => {
-            // Плавная интерполяция
             currentX.current += (targetX.current - currentX.current) * 0.08;
             currentY.current += (targetY.current - currentY.current) * 0.08;
 
@@ -62,11 +70,10 @@ export default function BackgroundGlow() {
                 cancelAnimationFrame(animationFrameId.current);
             }
         };
-    }, [isLoading]);
+    }, [isLoading, isMobile]);
 
     return (
         <div className="fixed inset-0 -z-10 overflow-hidden">
-            {/* Основное свечение */}
             <div
                 ref={glowRef}
                 className={`absolute inset-0 transition-opacity duration-1000 ease-out
@@ -78,24 +85,27 @@ export default function BackgroundGlow() {
                 } as React.CSSProperties}
             />
 
-            {/* Анимированные круги */}
-            <div className={`absolute top-1/4 left-1/4 w-[40vw] h-[40vw] animate-glow-slow
-                transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}
-                md:w-[40vw] md:h-[40vw] w-[80vw] h-[80vw]`}>
-                <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.08)] blur-3xl" />
-            </div>
+            {!isMobile && (
+                <>
+                    <div className={`absolute top-1/4 left-1/4 w-[40vw] h-[40vw] animate-glow-slow
+                        transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}
+                        md:w-[40vw] md:h-[40vw] w-[80vw] h-[80vw]`}>
+                        <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.08)] blur-3xl" />
+                    </div>
 
-            <div className={`absolute bottom-1/4 right-1/3 w-[35vw] h-[35vw] animate-glow-slow-reverse
-                transition-opacity duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}
-                md:w-[35vw] md:h-[35vw] w-[70vw] h-[70vw]`}>
-                <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.08)] blur-3xl" />
-            </div>
+                    <div className={`absolute bottom-1/4 right-1/3 w-[35vw] h-[35vw] animate-glow-slow-reverse
+                        transition-opacity duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}
+                        md:w-[35vw] md:h-[35vw] w-[70vw] h-[70vw]`}>
+                        <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.08)] blur-3xl" />
+                    </div>
 
-            <div className={`absolute top-1/3 right-1/4 w-[25vw] h-[25vw] animate-glow-slower
-                transition-opacity duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0'}
-                md:w-[25vw] md:h-[25vw] w-[50vw] h-[50vw]`}>
-                <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.1)] blur-3xl" />
-            </div>
+                    <div className={`absolute top-1/3 right-1/4 w-[25vw] h-[25vw] animate-glow-slower
+                        transition-opacity duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0'}
+                        md:w-[25vw] md:h-[25vw] w-[50vw] h-[50vw]`}>
+                        <div className="absolute inset-0 rounded-full bg-[rgba(29,161,242,0.1)] blur-3xl" />
+                    </div>
+                </>
+            )}
         </div>
     );
 } 

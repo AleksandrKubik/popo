@@ -4,9 +4,11 @@ import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { XIcon, TelegramIcon, YoutubeIcon } from '../components/icons/SocialIcons';
 import { Button } from '../components/ui/Button';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export default function Hero() {
     const router = useRouter();
+    const isMobile = useIsMobile();
     const [showTitle, setShowTitle] = useState(false);
     const [showDescription, setShowDescription] = useState(false);
     const [showCards, setShowCards] = useState(false);
@@ -139,7 +141,7 @@ export default function Hero() {
                                             'fixed left-0 top-0 -translate-x-1/4 -translate-y-1/4 scale-[2] rotate-12 z-50' : ''}
                                         ${isTransitioning && selectedService === service.name && !exitComplete ?
                                             'scale-150 -translate-y-20' : ''}
-                                        group-hover:scale-110`}
+                                        ${!isMobile ? 'group-hover:scale-110' : ''}`}
                                 >
                                     <service.icon />
                                 </div>
@@ -192,7 +194,7 @@ export default function Hero() {
                                             'fixed left-0 top-0 -translate-x-1/4 -translate-y-1/4 scale-[2] rotate-12 z-50' : ''}
                                         ${isTransitioning && selectedService === service.name && !exitComplete ?
                                             'scale-150 -translate-y-20' : ''}
-                                        group-hover:scale-110`}
+                                        ${!isMobile ? 'group-hover:scale-110' : ''}`}
                                 >
                                     <service.icon />
                                 </div>
