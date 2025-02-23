@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SocialBoost",
+  title: "HypeX",
   description: "Boost your social media presence",
-  keywords: "Twitter, X, growth, engagement, social media, marketing",
+  keywords: "Twitter, X, Telegram, YouTube, growth, engagement, social media, marketing",
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
