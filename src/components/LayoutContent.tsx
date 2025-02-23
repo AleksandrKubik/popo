@@ -1,8 +1,8 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import BackgroundGlow from '../components/BackgroundGlow';
-import Header from '../components/Header';
+import BackgroundGlow from './BackgroundGlow';
+import Header from './Header';
 
 export const LayoutContent = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -18,4 +18,6 @@ export const LayoutContent = ({ children }: { children: React.ReactNode }) => {
             </AnimatePresence>
         </div>
     );
-}; 
+};
+
+export default LayoutContent;

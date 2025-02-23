@@ -1,8 +1,9 @@
 "use client";
 
+import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-export default function BackgroundGlow() {
+const BackgroundGlow: React.FC = () => {
     const glowRef = useRef<HTMLDivElement>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [isVisible, setIsVisible] = useState(false);
@@ -86,4 +87,6 @@ export default function BackgroundGlow() {
             />
         </div>
     );
-} 
+};
+
+export default BackgroundGlow; 
